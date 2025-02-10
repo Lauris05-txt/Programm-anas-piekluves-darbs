@@ -1,13 +1,25 @@
 import requests
 import ast
+import freecurrencyapi
 
-def convert(have, want, amount):
-    api_url = 'https://api.api-ninjas.com/v1/convertcurrency?have={}&want={}&amount={}'.format(have, want, amount)
-    response = requests.get(api_url, headers={'X-Api-Key': 'Q2Ct8+B0IYgiFOzRJamJ/A==v2Xnz4KrhaHt9fno'})
-    if response.status_code == requests.codes.ok:
-        converted_value = ast.literal_eval(response.text)
-        return converted_value["new_amount"]
-    else:
-        print("Error:", response.status_code, response.text)
+def convert():
+    client = freecurrencyapi.Client('fca_live_lNvhPRSZ6CKfTPB5Va8WVFLfFlQHGEbv2XGXr84p')
 
-# convert('GBP', 'AUD', 5000)
+    # izprintēt jaunākās vērtības (pret 1 dollāru)
+    # result = client.latest()
+    # print(result)
+
+    # api statuss
+    print(client.status())
+
+    # informācija par valūtām
+    # result = client.currencies(currencies=['EUR', 'CAD'])
+    # print(result)
+convert()
+
+def test():
+    client = freecurrencyapi.Client('fca_live_lNvhPRSZ6CKfTPB5Va8WVFLfFlQHGEbv2XGXr84p')
+    result = client.latest(base_currency='EUR')
+    print(result)
+
+test()
