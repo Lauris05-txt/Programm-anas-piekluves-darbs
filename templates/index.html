@@ -4,14 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>HTML 5 Boilerplate</title>
-    <link rel="stylesheet" href="style.css">
+    <title> Valūtas konvertētājs</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css' ) }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   </head>
   <body>
-    <nav>
-      <ul>
-        <li><a href="/api">API</a></li>
+    <ul class="navbar">
+      <li><a href="/ieiet">Log in</a></li>
+      <li><a href="/regisreties">Sign up</a></li>
+      <li style="float:left"><a href="/sakumlapa">Valūtas konvertētājs</a></li>
     </ul>
-    </nav>
+    
+    <div class="input-container">
+      <input type="text" placeholder="Ievadi valūtu..." style="font-family: 'Montserrat', serif;">
+      <button>&rarr;</button>
+    </div>
   </body>
 </html>

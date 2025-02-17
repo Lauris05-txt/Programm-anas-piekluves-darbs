@@ -1,5 +1,5 @@
 import freecurrencyapi
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, url_for, session
 from datetime import datetime
 import re
 import requests
@@ -21,7 +21,7 @@ class Api():
         print(result)
 
 a = Api()
-a.get_currency_data()
+# a.get_currency_data()
 
 if __name__ == '__main__':
     app.run(debug=True)
