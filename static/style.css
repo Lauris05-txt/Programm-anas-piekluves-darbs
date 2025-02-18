@@ -28,8 +28,8 @@ body {
     display: grid;
     font-family: 'Montserrat', serif;
     margin: 0px;
+    background: url(https://images.pexels.com/photos/18541808/pexels-photo-18541808.jpeg?cs=srgb&dl=pexels-resourceboy-18541808.jpg&fm=jpg&w=1920&h=1080);
 }
-
 
 button {
     border: none;
