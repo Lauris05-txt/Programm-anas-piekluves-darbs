@@ -30,6 +30,7 @@ body {
     margin: 0px;
 }
 
+
 button {
     border: none;
 }
@@ -41,7 +42,7 @@ button {
     height: 50px;
     border: 2px solid #ccc;
     border-radius: 15px;
-    overflow: hidden;
+    background-color: #ffffff;
 }
 
 .input-container input {
