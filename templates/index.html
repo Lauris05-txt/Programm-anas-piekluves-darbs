@@ -16,9 +16,14 @@
       <li><a href="/regisreties">Sign up</a></li>
       <li style="float:left"><a href="/sakumlapa">Valūtas konvertētājs</a></li>
     </ul>
+    <form method="post"> 
+      <input type="text" name="input_currency" id="input_currency" placeholder="Ievadi sākuma valūtu..." style="font-family: 'Montserrat', serif;">
+        <input type="text" name="output_currency" id="output_currency" placeholder="Ievadi beigu valūtu..." style="font-family: 'Montserrat', serif;">
     <div class="input-container">
-      <input type="text" placeholder="Ievadi valūtu..." style="font-family: 'Montserrat', serif;">
-      <button>&rarr;</button>
+      <input type="text" name= 'input_sum' id="input_sum" placeholder="Ievadi vērtību..." style="font-family: 'Montserrat', serif;">
+      <input class="submit-button" type="submit" value="&rarr;" >
     </div>
+    <p style="color: white;"> {{output_sum}}</p>
+    </form> 
   </body>
 </html>
