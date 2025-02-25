@@ -11,58 +11,59 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   </head>
   <body> 
+
+
+    <div> 
+      <!-- body div -->
+
     <ul class="navbar">
       <li><a href="/ieiet">Log in</a></li>
       <li><a href="/regisreties">Sign up</a></li>
       <li style="float:left"><a href="/sakumlapa">Valūtas konvertētājs</a></li>
     </ul>
-    <form method="post"> 
-      <input type="text" name="input_currency" id="input_currency" placeholder="Ievadi sākuma valūtu..." style="font-family: 'Montserrat', serif;">
-      <input type="text" name="output_currency" id="output_currency" placeholder="Ievadi beigu valūtu..." style="font-family: 'Montserrat', serif;">
-    <div class="input-container">
-      <input type="text" name= 'input_sum' id="input_sum" placeholder="Ievadi vērtību..." style="font-family: 'Montserrat', serif;">
-      <input class="submit-button" type="submit" value="&rarr;" >
+
+    <div class="content">
+      <!-- content div -->
+      <div>
+
+        <form method="post" style="width: 50%;"> 
+          <input type="text" name="input_currency" id="input_currency" placeholder="Ievadi sākuma valūtu..." style="font-family: 'Montserrat', serif;">
+          <div class="input-container">
+            <input type="text" name= 'input_sum' id="input_sum" placeholder="Ievadi vērtību..." style="font-family: 'Montserrat', serif;">
+            <input class="submit-button" type="submit" value="&rarr;" >
+          </div>
+
+          <p style="color: white;"> {{output_sum}}</p>
+          <p style="color: white;"> {{converter_error}} </p>
+        
+          <label for="Currencies" style="color: white;">Izvēlies sākuma valūtu</label>
+          <select name="input_currency" id="input_currency">
+            <option selected value="GBP">GBP</option>
+            <option type="submit" value="USD">USD</option>
+            <option type="submit" value="EUR">EUR</option>
+            <option type="submit" value="JPY">JPY</option>
+          </select>
+          <br>
+        </form> 
+      </div>
+      <div> 
+        <hr class="line"></hr>
+      </div>
+       <div>
+        <form method="post" style="width: 50%;">
+          <input type="text" name="output_currency" id="output_currency" placeholder="Ievadi beigu valūtu..." style="font-family: 'Montserrat', serif;">
+          <label for="Currencies" style="color: white;">Izvēlies beigu valūtu</label>
+          <select name="currencies" id="output_currency">
+            <option value="GBP" name="GBP">GBP</option>
+            <option value="USD" name="USD">USD</option>
+            <option value="EUR" name="EUR">EUR</option>
+            <option value="JPY" name="JPY">JPY</option>
+          </select>
+        </form>
+       </div>
+      </div>
+
+
     </div>
-
-    <p style="color: white;"> {{output_sum}}</p>
-    <p style="color: white;"> {{converter_error}} </p>
-    <!-- <form method="post"> -->
-    <!-- <div class="dropdown">
-      <span style="color: white;">Izvēlies sākuma valūtu</span>
-      <div class="dropdown-content">
-         <input type="button" name="input_currency" id="input_currency" value="GBP"></input>
-         <input type="button" name="input_currency" id="input_currency" value="EUR"></input>
-          <input type="button" name="input_currency" id="input_currency" value="USD"></input>
-      </div> 
-    </div>
-
-    <div class="dropdown"> -->
-      <!-- <span style="color: white;">Izvēlies beigu valūtu</span>
-      <div class="dropdown-content">
-         <input type="button" name="output_currency" id="output_currency" value="EUR"></input>
-         <input type="button" name="output_currency" id="output_currency" value="GBP"></input>
-          <input type="button" name="output_currency" id="output_currency" value="USD"></input>
-      </div> 
-    </div>   -->
-    <label for="Currencies" style="color: white;">Izvēlies sākuma valūtu</label>
-    <select name="currencies" id="input_currency">
-      <option value="GBP">GBP</option>
-      <option value="USD">USD</option>
-      <option value="EUR">EUR</option>
-      <option value="JPY">JPY</option>
-    </select>
-    <br>
-
-    <label for="Currencies" style="color: white;">Izvēlies beigu valūtu</label>
-    <select name="currencies" id="output_currency">
-      <option value="GBP">GBP</option>
-      <option value="USD">USD</option>
-      <option value="EUR">EUR</option>
-      <option value="JPY">JPY</option>
-    </select>
-  </form> 
-
-    <!-- </form> -->
-
   </body>
 </html>

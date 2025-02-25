@@ -22,7 +22,7 @@ class Api():
         # except:
         #     KeyError
 converter = Api()
-# a.get_currency_data()
+
 app = Flask(__name__, static_folder='static', template_folder='templates')
 
 @app.route("/", methods = ["GET", "POST"])
