@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Valūtas konvertētājs</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css' ) }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  </head>
+
+    <body>
+        <div> 
+          <ul class="navbar">
+            <li><a href="/ieiet">Log in</a></li>
+            <li><a href="/regisreties">Sign up</a></li>
+            <li style="float:left"><a href="/sakumlapa">Valūtas konvertētājs</a></li>
+          </ul> 
+        </div>
+        <div class="mother-box">
+            <div class="big-box">
+                <div class="big-box-title-box"> 
+                    Iepriekšējie konvertējumi
+                </div>
+                <div class="table-area">
+                    <table class="big-box-table">
+                        <tr>
+                          <th>Datums</th>
+                          <th>Vērtība</th>
+                          <th>Sākuma valūta</th>
+                          <th>Konvertējamās valūtas</th>
+                          <th>Vērtības</th>
+                        </tr>
+                        <tr>
+                          <td>Alfreds Futterkiste</td>
+                          <td>Maria Anders</td>
+                          <td>Germany</td>
+                        </tr>
+                        <tr>
+                          <td>Centro comercial Moctezuma</td>
+                          <td>Francisco Chang</td>
+                          <td>Mexico</td>
+                        </tr>
+                      </table>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

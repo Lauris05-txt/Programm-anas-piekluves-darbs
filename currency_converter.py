@@ -3,12 +3,12 @@ from flask import Flask, render_template, request, redirect, url_for, session
 from datetime import datetime
 import re
 import requests
+import sqlite3
 
 class Api():
     def __init__(self):
         self.admin = freecurrencyapi.Client('fca_live_lNvhPRSZ6CKfTPB5Va8WVFLfFlQHGEbv2XGXr84p')
         self.result = None
-        self.time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         
     def get_currency_data(self, currency):
         result = self.admin.latest(base_currency=currency)
@@ -37,6 +37,8 @@ def index():
             print(input_currency, output_currency, input_sum)
             output_conversion = converter.convert_currency(input_currency, output_currency)
             output_sum = float(output_conversion) * float(input_sum)
+            a = Database()
+            a.insert_conversion_history("1", input_sum, input_currency, output_sum, output_currency, datetime.now().strftime("%Y-%m-%d"), datetime.now().strftime("%H:%M:%S"))
         except KeyError as e:
             converter_error = f"KeyError: {e}"
         except ValueError as e:
@@ -46,6 +48,24 @@ def index():
 
     print(output_sum)
     return render_template("index.html", output_sum=output_sum, converter_error=converter_error)
+
+@app.route("/vesture", methods = ["GET"])
+def history():
+    return render_template("vesture.html")
     
+
+
+class Database():
+    def __init__(self):
+        self.connection = sqlite3.connect('valūtas_konvertētājs.db')
+        self.cur = self.connection.cursor()
+
+    def insert_conversion_history(self, user_id, value_from, currency_from, value_to, currency_to, date, time):
+        self.cur.execute("""INSERT INTO 'conversion_history'('user_id', 'value_from', 'currency_from', 'value_to', 'currency_to', 'date', 'time') VALUES (?, ?, ?, ?, ?, ?, ?)
+""", (user_id, value_from, currency_from, value_to, currency_to, date, time))
+        self.connection.commit()
+        self.connection.close()
+
 if __name__ == '__main__':
+   
     app.run(debug=True)
