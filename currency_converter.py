@@ -18,7 +18,7 @@ def index():
             output_sum = float(output_conversion) * float(input_sum)
 
             db = utilities.Database()
-            db.insert_history("1", input_sum, input_currency, output_sum, output_currency, datetime.now().strftime("%Y-%m-%d"), datetime.now().strftime("%H:%M:%S"))
+            db.insert_conversion_history("1", input_sum, input_currency, output_sum, output_currency, datetime.now().strftime("%Y-%m-%d"), datetime.now().strftime("%H:%M:%S"))
         
         except KeyError as e:
             converter_error = f"KeyError: {e}"
@@ -32,7 +32,19 @@ def index():
 def history():
     db = utilities.Database()
     history = db.get_histrory()
+    print(history == [])
+    if history == []:
+        return render_template("history.html", history = (("", "", "", "", "", "", "")))
+    else:
+        return render_template("history.html", history = history)
+
+@app.route("/api/delete_history", methods = ["POST", "GET"])
+def delete_history():
+    db = utilities.Database()
+    history = db.delete_history()
     return render_template("history.html", history = history)
+
+    
     
 if __name__ == '__main__':
     app.run(debug=True)

@@ -36,7 +36,7 @@
           <p style="color: white;"> {{converter_error}} </p>
         
           <label for="Currencies" style="color: white;">Izvēlies sākuma valūtu</label>
-          <select class="dropdown-des" name="input_currency" id="input_currency">
+          <select name="input_currency" id="input_currency">
             <option selected value="GBP">GBP</option>
             <option type="submit" value="USD">USD</option>
             <option type="submit" value="EUR">EUR</option>
@@ -78,39 +78,39 @@
        <div class="home-right">
         <!-- <input type="text" name="output_currency" id="output_currency" placeholder="Ievadi beigu valūtu..." style="font-family: 'Montserrat', serif;"> -->
           <label for="Currencies" style="color: white;">Izvēlies beigu valūtu</label>
-          <select class="dropdown-des" name="output_currency" id="output_currency">
+          <select name="output_currency" id="output_currency">
             <option selected value="GBP" name="GBP">GBP</option>
             <option value="USD" name="USD">USD</option>
             <option value="EUR" name="EUR">EUR</option>
             <option value="JPY" name="JPY">JPY</option>
             <option value="CZK" name="CZK">CZK</option>
-            <option value="DKK" name="DKK">DKK</option>
-            <option value="HUF" name="HUF">HUF</option>
-            <option value="PLN" name="PLN">PLN</option>
-            <option value="RON" name="RON">RON</option>
-            <option value="SEK" name="SEK">SEK</option>
-            <option value="CHF" name="CHF">CHF</option>
-            <option value="ISK" name="ISK">ISK</option>
-            <option value="NOK" name="NOK">NOK</option>
-            <option value="HRK" name="HRK">HRK</option>
-            <option value="RUB" name="RUB">RUB</option>
-            <option value="TRY" name="TRY">TRY</option>
-            <option value="AUD" name="AUD">AUD</option>
-            <option value="BRL" name="BRL">BRL</option>
-            <option value="CAD" name="CAD">CAD</option>
-            <option value="CNY" name="CNY">CNY</option>
-            <option value="HKD" name="HKD">HKD</option>
-            <option value="IDR" name="IDR">IDR</option>
-            <option value="ILS" name="ILS">ILS</option>
-            <option value="INR" name="INR">INR</option>
-            <option value="KRW" name="KRW">KRW</option>
-            <option value="MXN" name="MXN">MXN</option>
-            <option value="MYR" name="MYR">MYR</option>
-            <option value="NZD" name="NZD">NZD</option>
-            <option value="PHP" name="PHP">PHP</option>
-            <option value="SGD" name="SGD">SGD</option>
-            <option value="THB" name="THB">THB</option>
-            <option value="ZAR" name="ZAR">ZAR</option>
+            <option name="DKK">DKK</option>
+            <option name="HUF">HUF</option>
+            <option name="PLN">PLN</option>
+            <option name="RON">RON</option>
+            <option name="SEK">SEK</option>
+            <option name="CHF">CHF</option>
+            <option name="ISK">ISK</option>
+            <option name="NOK">NOK</option>
+            <option name="HRK">HRK</option>
+            <option name="RUB">RUB</option>
+            <option name="TRY">TRY</option>
+            <option name="AUD">AUD</option>
+            <option name="BRL">BRL</option>
+            <option name="CAD">CAD</option>
+            <option name="CNY">CNY</option>
+            <option name="HKD">HKD</option>
+            <option name="IDR">IDR</option>
+            <option name="ILS">ILS</option>
+            <option name="INR">INR</option>
+            <option name="KRW">KRW</option>
+            <option name="MXN">MXN</option>
+            <option name="MYR">MYR</option>
+            <option name="NZD">NZD</option>
+            <option name="PHP">PHP</option>
+            <option name="SGD">SGD</option>
+            <option name="THB">THB</option>
+            <option name="ZAR">ZAR</option>
           </select>
         </form>
        </div>

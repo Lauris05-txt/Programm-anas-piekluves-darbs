@@ -19,7 +19,7 @@ class Api():
 
 class Database():
     def __init__(self):
-        self.connection = sqlite3.connect('valūtas_konvertētājs.db')
+        self.connection = sqlite3.connect('valutas_konvertetajs.db')
         self.cur = self.connection.cursor()
 
     def insert_conversion_history(self, user_id, value_from, currency_from, value_to, currency_to, date, time):
@@ -27,3 +27,16 @@ class Database():
 """, (user_id, value_from, currency_from, value_to, currency_to, date, time))
         self.connection.commit()
         self.connection.close()
+    
+    def get_histrory(self):
+        self.cur.execute("""SELECT * FROM 'conversion_history'""")
+        history = self.cur.fetchall()
+        self.cur.close()
+        return history
+    
+    def delete_history(self):
+        self.cur.execute("""DELETE FROM 'conversion_history'""")
+        self.connection.commit()
+        self.cur.close()
+        return (("", "", "", "", "", "", ""))
+

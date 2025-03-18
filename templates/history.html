@@ -20,7 +20,7 @@
           <ul class="navbar">
             <li><a href="/ieiet">Log in</a></li>
             <li><a href="/regisreties">Sign up</a></li>
-            <li style="float:left"><a href="/sakumlapa">Valūtas konvertētājs</a></li>
+            <li style="float:left"><a href="/">Valūtas konvertētājs</a></li>
           </ul> 
         </div>
         <div class="mother-box">
@@ -31,23 +31,26 @@
                 <div class="table-area">
                     <table class="big-box-table">
                         <tr>
-                          <th>Datums</th>
-                          <th>Sākuma valūta</th>
-                          <th>Sākuma vērtība</th>
-                          <th>Beigu valūta</th>
+                          <th class="borderized-right">Datums</th>
+                          <th class="borderized-right">Sākuma valūta</th>
+                          <th class="borderized-right">Sākuma vērtība</th>
+                          <th class="borderized-right">Beigu valūta</th>
                           <th>Beigu vērtība</th>
                         </tr>
                         {% for row in history %}
                           <tr>
-                            <td>{{ row [5] }}</td>
-                            <td>{{ row [2] }}</td>
-                            <td>{{ row [1] }}</td>
-                            <td>{{ row [4] }}</td>
+                            <td class="borderized-right">{{ row [5] }}</td>
+                            <td class="borderized-right">{{ row [2] }}</td>
+                            <td class="borderized-right">{{ row [1] }}</td>
+                            <td class="borderized-right">{{ row [4] }}</td>
                             <td>{{ row [3] }}</td>
                           </tr>
                         {% endfor %}
                       </table>
                 </div>
+                <form action="/api/delete_history">
+                <input type="submit" name="delete_history" value="Dzēst vēsturi"/>
+                </form>
             </div>
         </div>
     </body>
