@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css' ) }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   </head>
   <body> 
@@ -24,10 +25,50 @@
 
     <div class="content">
       <!-- content div -->
-      <div class="home-left">
-
-        <form method="post" style="width: 50%;"> 
+      <div class="left-mother-box"> 
+      <div class="left-big-box">
+      <div class="left-big-box-title">
+        Valūtas ievade
+      </div>
+        <form method="post"> 
+          <div class="box-content">
+            <label class="dropdown-1" for="Currencies" style="color: white;"></label>
+            <select class="dropdown-des" name="input_currency" id="input_currency">
+              <option selected value="GBP">GBP</option>
+              <option type="submit" value="USD">USD</option>
+              <option type="submit" value="EUR">EUR</option>
+              <option type="submit" value="BGN">BGN</option>
+              <option type="submit" value="CZK">CZK</option>
+              <option type="submit" value="DKK">DKK</option>
+              <option type="submit" value="HUF">HUF</option>
+              <option type="submit" value="PLN">PLN</option>
+              <option type="submit" value="RON">RON</option>
+              <option type="submit" value="SEK">SEK</option>
+              <option type="submit" value="CHF">CHF</option>
+              <option type="submit" value="ISK">ISK</option>
+              <option type="submit" value="NOK">NOK</option>
+              <option type="submit" value="HRK">HRK</option>
+              <option type="submit" value="RUB">RUB</option>
+              <option type="submit" value="TRY">TRY</option>
+              <option type="submit" value="AUD">AUD</option>
+              <option type="submit" value="BRL">BRL</option>
+              <option type="submit" value="CAD">CAD</option>
+              <option type="submit" value="CNY">CNY</option>
+              <option type="submit" value="HKD">HKD</option>
+              <option type="submit" value="IDR">IDR</option>
+              <option type="submit" value="ILS">ILS</option>
+              <option type="submit" value="INR">INR</option>
+              <option type="submit" value="KRW">KRW</option>
+              <option type="submit" value="MXN">MXN</option>
+              <option type="submit" value="MYR">MYR</option>
+              <option type="submit" value="NZD">NZD</option>
+              <option type="submit" value="PHP">PHP</option>
+              <option type="submit" value="SGD">SGD</option>
+              <option type="submit" value="THB">THB</option>
+              <option type="submit" value="ZAR">ZAR</option>
+            </select>
           <div class="input-container">
+            
             <input type="text" name= 'input_sum' id="input_sum" placeholder="Ievadi vērtību..." style="font-family: 'Montserrat', serif;">
             <input class="submit-button" type="submit" value="&rarr;" >
           </div>
@@ -35,47 +76,22 @@
           <p style="color: white;"> {{output_sum}}</p>
           <p style="color: white;"> {{converter_error}} </p>
         
-          <label for="Currencies" style="color: white;">Izvēlies sākuma valūtu</label>
-          <select class="dropdown-des" name="input_currency" id="input_currency">
-            <option selected value="GBP">GBP</option>
-            <option type="submit" value="USD">USD</option>
-            <option type="submit" value="EUR">EUR</option>
-            <option type="submit" value="BGN">BGN</option>
-            <option type="submit" value="CZK">CZK</option>
-            <option type="submit" value="DKK">DKK</option>
-            <option type="submit" value="HUF">HUF</option>
-            <option type="submit" value="PLN">PLN</option>
-            <option type="submit" value="RON">RON</option>
-            <option type="submit" value="SEK">SEK</option>
-            <option type="submit" value="CHF">CHF</option>
-            <option type="submit" value="ISK">ISK</option>
-            <option type="submit" value="NOK">NOK</option>
-            <option type="submit" value="HRK">HRK</option>
-            <option type="submit" value="RUB">RUB</option>
-            <option type="submit" value="TRY">TRY</option>
-            <option type="submit" value="AUD">AUD</option>
-            <option type="submit" value="BRL">BRL</option>
-            <option type="submit" value="CAD">CAD</option>
-            <option type="submit" value="CNY">CNY</option>
-            <option type="submit" value="HKD">HKD</option>
-            <option type="submit" value="IDR">IDR</option>
-            <option type="submit" value="ILS">ILS</option>
-            <option type="submit" value="INR">INR</option>
-            <option type="submit" value="KRW">KRW</option>
-            <option type="submit" value="MXN">MXN</option>
-            <option type="submit" value="MYR">MYR</option>
-            <option type="submit" value="NZD">NZD</option>
-            <option type="submit" value="PHP">PHP</option>
-            <option type="submit" value="SGD">SGD</option>
-            <option type="submit" value="THB">THB</option>
-            <option type="submit" value="ZAR">ZAR</option>
-          </select>
           <br>
+          <div> 
+            <i class="material-icons">&#xe192;</i>
+            <a class="link-to-history" href="/history">Apskatīt vēsturi</a>
+          </div>
+          </div>
       </div>
+      </div>  
       <div> 
         <hr class="line"></hr>
       </div>
-       <div class="home-right">
+      <div class="right-mother-box"> 
+        <div class="right-big-box">
+        <div class="right-big-box-title">
+          Valūtas izvade
+        </div>
         <!-- <input type="text" name="output_currency" id="output_currency" placeholder="Ievadi beigu valūtu..." style="font-family: 'Montserrat', serif;"> -->
           <label for="Currencies" style="color: white;">Izvēlies beigu valūtu</label>
           <select class="dropdown-des" name="output_currency" id="output_currency">
@@ -113,9 +129,6 @@
             <option value="ZAR" name="ZAR">ZAR</option>
           </select>
         </form>
-       </div>
-       <div> 
-        <a href="/history">Apskatīt vēsturi</a>
        </div>
       </div>
     </div>
