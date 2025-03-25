@@ -68,6 +68,7 @@ button {
     padding-right: 20px; 
     /* svarigs */
     margin-right: 20px;
+    align-items: center;
     background-color: #029AE3;
     color: white;
     cursor: pointer;
@@ -251,7 +252,7 @@ table {
 }
 
 .box-content {
-    padding-top: 15px;
+    padding-top: 100px;
     width: 69%;
     margin-left: auto;
     margin-right: auto;
@@ -262,3 +263,50 @@ table {
 .dropdown-1 {
     margin-left: -175px;
 }
+
+.output-box {
+    display: flex;
+    align-items: center;
+    width: 250px;
+    height: 50px;
+    border: 2px solid #ccc;
+    border-radius: 15px;
+    background-color: #ffffff;
+    padding-right: 10px;
+}
+
+.box-content-2 {
+    padding-top: 50px;
+    width: 69%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: auto; 
+}
+
+.delete-history-button {
+    display: block;
+    border: none;
+    font-family: 'Montserrat', 'serif';
+    border-radius: 10px;
+    color: #ffffff;
+    background-color: rgb(132, 0, 0);
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    width: 150px;
+    float: right;
+    margin-right: 95px;
+    margin-top: 20px;
+}
+
+.delete-history-button:hover {
+    width: 150px;
+    font-family: 'Montserrat', 'serif';
+    background-color: rgb(94, 0, 0);
+}
+
+.delete-button {
+    padding-top: auto;
+    padding-bottom: 20px;
+}
+

@@ -32,7 +32,7 @@ class Database():
         self.cur.execute("""SELECT * FROM 'conversion_history'""")
         history = self.cur.fetchall()
         self.cur.close()
-        return history
+        return history[-11:]
     
     def delete_history(self):
         self.cur.execute("""DELETE FROM 'conversion_history'""")

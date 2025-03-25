@@ -48,9 +48,13 @@
                         {% endfor %}
                       </table>
                 </div>
+                <div class="delete-button"> 
                 <form action="/api/delete_history">
-                <input type="submit" name="delete_history" value="Dzēst vēsturi"/>
+                  
+                <input class="delete-history-button" type="submit" name="delete_history" value="Dzēst vēsturi"/>
                 </form>
+                <a href="/"> Atgriezties </a>
+                </div>
             </div>
         </div>
     </body>

@@ -67,17 +67,17 @@
               <option type="submit" value="THB">THB</option>
               <option type="submit" value="ZAR">ZAR</option>
             </select>
+            <div style="padding-top: 20px;"> </div>
           <div class="input-container">
             
             <input type="text" name= 'input_sum' id="input_sum" placeholder="Ievadi vērtību..." style="font-family: 'Montserrat', serif;">
             <input class="submit-button" type="submit" value="&rarr;" >
           </div>
 
-          <p style="color: white;"> {{output_sum}}</p>
           <p style="color: white;"> {{converter_error}} </p>
         
           <br>
-          <div> 
+          <div style="padding-top: 30px;"> 
             <i class="material-icons">&#xe192;</i>
             <a class="link-to-history" href="/history">Apskatīt vēsturi</a>
           </div>
@@ -93,7 +93,8 @@
           Valūtas izvade
         </div>
         <!-- <input type="text" name="output_currency" id="output_currency" placeholder="Ievadi beigu valūtu..." style="font-family: 'Montserrat', serif;"> -->
-          <label for="Currencies" style="color: white;">Izvēlies beigu valūtu</label>
+        <div class="box-content">
+        <label class="dropdown-1" for="Currencies" style="color: white;"></label>
           <select class="dropdown-des" name="output_currency" id="output_currency">
             <option selected value="GBP" name="GBP">GBP</option>
             <option value="USD" name="USD">USD</option>
@@ -128,6 +129,11 @@
             <option value="THB" name="THB">THB</option>
             <option value="ZAR" name="ZAR">ZAR</option>
           </select>
+          <div style="padding-top: 20px;"> </div>
+          <div class="output-box" id="output_sum">
+            <p> {{ output_sum }}</p>
+          </div>
+          </div>
         </form>
        </div>
       </div>
