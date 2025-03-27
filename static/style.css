@@ -310,3 +310,26 @@ table {
     padding-bottom: 20px;
 }
 
+.copy-button {
+    margin-left: 220px;
+}
+
+.copy-button-icon {
+    color: #aaaaaa;
+    float: right;
+}
+
+.copy-button-icon:hover {
+    color: #414141;
+    transition-duration: 0.3s;
+}
+
+.copy-button-icon:active {
+    color: #00ff51;
+    transform: translateY(2px);
+    transition-duration: 0.1s;
+}
+
+.copy-button-icon:active:after {
+    color: #00ff51;
+}

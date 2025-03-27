@@ -132,11 +132,24 @@
           <div style="padding-top: 20px;"> </div>
           <div class="output-box" id="output_sum">
             <p> {{ output_sum }}</p>
+            <button class="copy-button" style="background-color: #ffffff;" onclick="copy(event)"><i class="copy-button-icon material-icons">content_copy</i></button>
           </div>
           </div>
         </form>
        </div>
       </div>
     </div>
+    <script>
+      function copy(event) {
+        event.preventDefault();
+
+        const textToCopy = document.getElementById('output_sum').innerText;
+
+        navigator.clipboard.writeText(textToCopy).then(() => {
+          const button = event.target;
+          // button.innerText = 'Copied!';
+        });
+      }
+    </script>
   </body>
 </html>
