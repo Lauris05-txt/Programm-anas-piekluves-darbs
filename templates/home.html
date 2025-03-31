@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title> Valūtas konvertētājs</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css' ) }}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    </head>
+    <body> 
+    <div> 
+      <!-- body div -->
+        <ul class="navbar">
+            <li><a href="/ieiet">Log in</a></li>
+            <li><a href="/regisreties">Sign up</a></li>
+            <li style="float:left"><a href="/home">Valūtas konvertētājs</a></li>
+        </ul>
+        <div style="padding-top: 60px;">
+        <div class="big-box"> 
+            <div class="box-img">
+                <h2 class="heading"> Reāllaika valūtas konvertētājs. </h2>
+            </div>
+            <div class="content"> 
+                <div class="paragr-left">
+                    <p> Reāllaika valūtas vērtības, savas preferences, sava konvertācijas vēsture. Pievienojies jau tagad! </p>
+                    <input type="button" class="button" value="Reģistrēties">
+                </div>
+                <div> 
+                    <hr class="line-2">
+                </div>
+                <div class="paragr-right">
+                    <p> Esi atpakaļ? Tad ienāc un sākam darbu! </p>
+                    <input type="button" class="button" value="Pieslēgties">
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </body>
+</html>

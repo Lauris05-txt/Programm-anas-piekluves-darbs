@@ -44,7 +44,9 @@ def delete_history():
     history = db.delete_history()
     return render_template("history.html", history = history)
 
-    
+@app.route("/home", methods = ["GET"])
+def home():
+    return render_template("home.html")
     
 if __name__ == '__main__':
     app.run(debug=True)

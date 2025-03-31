@@ -311,7 +311,8 @@ table {
 }
 
 .copy-button {
-    margin-left: 220px;
+    position: absolute;
+    right: 260px;
 }
 
 .copy-button-icon {
@@ -332,4 +333,67 @@ table {
 
 .copy-button-icon:active:after {
     color: #00ff51;
+}
+
+.box-img {
+    background-image: url('https://www.imf.org/-/media/Images/IMF/Blog/Migrated/BLOG-2099x600-Currencies-Zephyr18-iStock-by-Getty-Images-iStock-1056322744.ashx');
+    height: 200px;
+    background-color: #D9D9D9;
+    display: block;
+    margin: auto;
+    border-radius: 15px;
+}
+
+.paragr-left {
+    margin: auto;
+    margin-top: 60px;
+    width: 500px;
+    text-align: center;
+    color: #666666;
+}
+
+.paragr-right {
+    margin: auto;
+    margin-top: 60px;
+    width: 500px;
+    text-align: center;
+    color: #666666;
+}
+
+.line-2 {
+
+    margin-left: 1px solid #a7a7a7;
+    border-color: #a7a7a7;
+    border-style: solid;
+    height: 220px;
+    margin-top: 40px;
+
+}
+
+.button {
+    border: none;
+    font-family: 'Montserrat', 'serif';
+    border-radius: 10px;
+    color: #ffffff;
+    background-color: #029AE3;
+    padding: 14px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+    width: 150px;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.button:hover {
+    width: 150px;
+    font-family: 'Montserrat', 'serif';
+    background-color: #006fa3;
+}
+
+.heading {
+    padding-left: 70px;
+    padding-top: 95px;
+    font-weight: 600;
+    font-size: 22px;
 }
