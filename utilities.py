@@ -1,5 +1,6 @@
 import freecurrencyapi
 import sqlite3
+import hashlib
 
 class Api():
     def __init__(self):
@@ -41,8 +42,7 @@ class Database():
         return (("", "", "", "", "", "", ""))
     
     def user_data(self, username, email, password):
-        self.cur.execute("""INSERT INTO 'user'('username', 'email', 'password') VALUES (?, ?, ?) """, (username, email, password))
+        hashed_password = hashlib.md5(password).hexdigest()
+        self.cur.execute("""INSERT INTO 'user'('username', 'email', 'password') VALUES (?, ?, ?) """, (username, email, hashed_password))
         self.connection.commit()
         self.connection.close()
-
-
