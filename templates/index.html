@@ -19,7 +19,7 @@
 
     <ul class="navbar">
       <li><a href="/ieiet">Log in</a></li>
-      <li><a href="/regisreties">Sign up</a></li>
+      <li><a href="/signup">Sign up</a></li>
       <li style="float:left"><a href="/home">Valūtas konvertētājs</a></li>
     </ul>
 
@@ -77,8 +77,8 @@
           <p style="color: white;"> {{converter_error}} </p>
         
           <br>
-          <div style="padding-top: 30px;"> 
-            <i class="material-icons">&#xe192;</i>
+          <div class="history-items" style="padding-top: 30px;"> 
+            <i class="material-icons clock-icon">&#xe192;</i>
             <a class="link-to-history" href="/history">Apskatīt vēsturi</a>
           </div>
           </div>
@@ -130,8 +130,8 @@
             <option value="ZAR" name="ZAR">ZAR</option>
           </select>
           <div style="padding-top: 20px;"> </div>
-          <div class="output-box" id="output_sum">
-            <p> {{ output_sum }}</p>
+          <div class="output-box">
+            <p id="output_sum"> {{ output_sum }}</p>
             <button class="copy-button" style="background-color: #ffffff;" onclick="copy(event)"><i class="copy-button-icon material-icons">content_copy</i></button>
           </div>
           </div>
@@ -144,6 +144,7 @@
         event.preventDefault();
 
         const textToCopy = document.getElementById('output_sum').innerText;
+      
 
         navigator.clipboard.writeText(textToCopy).then(() => {
           const button = event.target;

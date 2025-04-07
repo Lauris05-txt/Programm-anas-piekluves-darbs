@@ -200,7 +200,7 @@ table {
     background-color: #029AE3;
     display: block;
     margin: auto;
-    border-radius: 15px;
+    border-radius: 15px; 
 }
 
 .left-big-box-title {
@@ -243,13 +243,27 @@ table {
 }
 
 .link-to-history {
+    position: absolute;
     color: #ffffff;
+    top: 433px;
+    left: 343px;
     text-decoration: none;
+    transition: 0.3s;
+}
+
+.link-to-history:hover {
+    transform: translateY(2px);
 }
 
 .material-icons {
     color: #ffffff;
 }
+
+.clock-icon {
+    position: absolute;
+    left: 315px;
+}
+
 
 .box-content {
     padding-top: 100px;
@@ -312,7 +326,7 @@ table {
 
 .copy-button {
     position: absolute;
-    right: 260px;
+    right: 270px;
 }
 
 .copy-button-icon {
@@ -396,4 +410,89 @@ table {
     padding-top: 95px;
     font-weight: 600;
     font-size: 22px;
+}
+
+.atgriezties-poga {
+    text-decoration: none;
+    color: #666666;
+    font-weight: 500;
+    padding: 30px 80px;
+    position: absolute;
+}
+
+.mother-half-box {
+    margin: auto;
+    margin-top: 60px;
+    width: 600px;
+    text-align: center;
+}
+.main-half-box {
+    height: 500px;
+    width: 80%;
+    background-color: #D9D9D9;
+    display: block;
+    margin: auto;
+    border-radius: 15px; 
+}
+
+.half-box-title {
+    display: inline-block;
+    height: 50px;
+    border-radius: 15px;
+    width: 100%;
+    background-color: #ffffff;
+    align-content: center;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.input-container-2 {
+    display: inline-flex;
+    align-items: center;
+    width: 300px;
+    height: 50px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    background-color: #ffffff;
+    padding-right: 10px;
+    margin-top: 12px;
+    box-shadow: 0px 1px 3px #8e8e8e;
+}
+
+.input-container-2 input {
+    border: black 1px;
+    outline: none;
+    margin-left: 18px;
+    padding: 10px;
+    flex: 1;
+}
+
+.register-button {
+    border: none;
+    font-family: 'Montserrat', 'serif';
+    border-radius: 10px;
+    color: #ffffff;
+    background-color: #029AE3;
+    padding: 14px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+    width: 150px;
+    margin-top: 20px;
+    font-size: 17px;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+}
+
+.register-button:hover {
+    width: 150px;
+    font-family: 'Montserrat', 'serif';
+    background-color: #006fa3;
+}
+
+.have-account {
+    display: ruby;
+    color: #7c7c7c;
+    font-size: 14px;
 }

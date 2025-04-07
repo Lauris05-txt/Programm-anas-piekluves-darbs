@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Valūtas konvertētājs</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css' ) }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  </head>
+  <body> 
+
+
+    <div> 
+      <!-- body div -->
+
+    <ul class="navbar">
+      <li style="float:left"><a href="/home">Valūtas konvertētājs</a></li>
+    </ul>
+
+    <div class="mother-half-box">
+    <div class="main-half-box">
+        <div class="half-box-title">
+            Reģistrēties
+        </div>
+        <form action="post"> 
+        <div class="input-container-2"> 
+          <input type="text" name= 'username' id="username" placeholder="Lietotājvārds" style="font-family: 'Montserrat', serif;">
+        </div>
+        <div class="input-container-2"> 
+          <input type="text" name= 'email' id="email" placeholder="E-pasta adrese" style="font-family: 'Montserrat', serif;">
+        </div>
+        <div class="input-container-2"> 
+          <input type="text" name= 'password' id="password" placeholder="Parole" style="font-family: 'Montserrat', serif;">
+        </div>
+        <div class="input-container-2"> 
+          <input type="text" name= 'password_check' id="password_check" placeholder="Atkārtot paroli" style="font-family: 'Montserrat', serif;">
+        </div>
+
+        <div> 
+        <input type="submit" class="register-button" value="Reģistrēties">
+        </div>
+
+        </form>
+        <div class="have-account">
+          <p>Vai Jums jau ir konts? Pieslēdzies </p>
+          <a href="/login">šeit </a>
+        </div>
+
+    </div>
+    </div>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+    </div>
+
+    </body>
+
+    </html>

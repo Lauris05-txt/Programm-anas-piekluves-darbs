@@ -47,6 +47,16 @@ def delete_history():
 @app.route("/home", methods = ["GET"])
 def home():
     return render_template("home.html")
+
+@app.route('/signup', methods=['GET', 'POST'])
+def signup():
+    username = request.form.get('username')
+    email = request.form.get('email')
+    password = request.form.get('password')
+
+    db = utilities.Database()
+    db.user_data(username, email, password)
+    return render_template('signup.html')
     
 if __name__ == '__main__':
     app.run(debug=True)

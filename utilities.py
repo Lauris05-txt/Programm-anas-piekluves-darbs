@@ -39,4 +39,10 @@ class Database():
         self.connection.commit()
         self.cur.close()
         return (("", "", "", "", "", "", ""))
+    
+    def user_data(self, username, email, password):
+        self.cur.execute("""INSERT INTO 'user'('username', 'email', 'password') VALUES (?, ?, ?) """, (username, email, password))
+        self.connection.commit()
+        self.connection.close()
+
 
