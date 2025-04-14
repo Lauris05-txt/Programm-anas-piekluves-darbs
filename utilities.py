@@ -40,9 +40,9 @@ class Database():
         self.connection.commit()
         self.cur.close()
         return (("", "", "", "", "", "", ""))
-    
+
     def user_data(self, username, email, password):
-        hashed_password = hashlib.md5(password).hexdigest()
+        hashed_password = hashlib.md5(password.encode()).hexdigest()
         self.cur.execute("""INSERT INTO 'user'('username', 'email', 'password') VALUES (?, ?, ?) """, (username, email, hashed_password))
         self.connection.commit()
         self.connection.close()

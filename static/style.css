@@ -395,7 +395,7 @@ table {
     font-weight: 600;
     transition: 0.3s;
     width: 150px;
-    margin-top: 20px;
+    margin-top: 50px;
     font-size: 16px;
 }
 
@@ -427,7 +427,7 @@ table {
     text-align: center;
 }
 .main-half-box {
-    height: 500px;
+    height: 550px;
     width: 80%;
     background-color: #D9D9D9;
     display: block;
@@ -495,4 +495,34 @@ table {
     display: ruby;
     color: #7c7c7c;
     font-size: 14px;
+}
+
+.error-message {
+    color: rgb(255, 0, 0);
+    border: rgb(255, 0, 0);
+    border-width: 2px;
+    border-style: solid;
+    display: block;
+    width: 70%;
+    height: 20px;
+    align-content: center;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.no-err-message {
+    color:#009b31;
+    border: #009b31;
+    border-width: 2px;
+    border-style: solid;
+    display: block;
+    width: 70%;
+    height: 20px;
+    align-content: center;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.paragraph {
+    margin-bottom: 30px;
 }

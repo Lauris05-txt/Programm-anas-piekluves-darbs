@@ -26,7 +26,7 @@
         <div class="half-box-title">
             Reģistrēties
         </div>
-        <form action="post"> 
+        <form action="/signup" method="post"> 
         <div class="input-container-2"> 
           <input type="text" name= 'username' id="username" placeholder="Lietotājvārds" style="font-family: 'Montserrat', serif;" required>
         </div>
@@ -49,7 +49,12 @@
           <p>Vai Jums jau ir konts? Pieslēdzies </p>
           <a href="/login">šeit </a>
         </div>
-
+        {% for err in reg_err %}
+          <p class="error-message"> {{err}} </p>
+        {% endfor %}
+        {% for i in no_err %}
+          <p class="no-err-message"> {{i}} </p>
+        {% endfor %}
     </div>
     </div>
 

@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 from datetime import datetime
 import utilities
+import re
 
 converter = utilities.Api()
 app = Flask(__name__, static_folder='static', template_folder='templates')
@@ -50,13 +51,43 @@ def home():
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
-    username = request.form.get('username')
-    email = request.form.get('email')
-    password = request.form.get('password')
+    reg_err = []
+    no_err = []
+    no_err_count = 0
+    if request.method == "POST":
+        username = request.form.get('username')
+        email = request.form.get('email')
+        password = request.form.get('password')
+        password_check = request.form.get('password_check')
 
-    db = utilities.Database()
-    db.user_data(username, email, password)
-    return render_template('signup.html')
+                
+        if email:
+            a = re.match(r"^\S+@\S+\.\S+$", email)
+            if a:
+                no_err_count += 1
+            else:
+                reg_err.append("Neatbilstoša epasta adrese")
+        if password == password_check:
+            no_err_count += 1
+        else:
+            reg_err.append("Paroles nesakrīt")
+
+        if no_err_count == 2:
+            no_err.append("Reģistrācija veiksmīga!")
+        else:
+            print("kaut kas nogāja greizi")
+
+        db = utilities.Database()
+        db.user_data(username, email, password)
     
+    print(reg_err)
+
+    return render_template('signup.html', reg_err = reg_err, no_err = no_err)
+    
+@app.route('/login', methods = ["POST", "GET"])
+def login():
+    return render_template("login.html")
+
+
 if __name__ == '__main__':
     app.run(debug=True)
