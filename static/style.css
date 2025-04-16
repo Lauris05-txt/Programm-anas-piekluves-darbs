@@ -526,3 +526,7 @@ table {
 .paragraph {
     margin-bottom: 30px;
 }
+
+.validation {
+    color: red;
+}

@@ -6,7 +6,7 @@ import re
 converter = utilities.Api()
 app = Flask(__name__, static_folder='static', template_folder='templates')
 
-@app.route("/", methods = ["GET", "POST"])
+@app.route("/home", methods = ["GET", "POST"])
 def index():
     output_sum = ""
     converter_error = ""
@@ -27,7 +27,7 @@ def index():
             converter_error = f"ValueError: {e}"
         except Exception as e:
             converter_error = f"Error: {e}"
-    return render_template("index.html", output_sum=output_sum, converter_error=converter_error)
+    return render_template("home.html", output_sum=output_sum, converter_error=converter_error)
 
 @app.route("/history", methods = ["GET"])
 def history():
@@ -45,9 +45,9 @@ def delete_history():
     history = db.delete_history()
     return render_template("history.html", history = history)
 
-@app.route("/home", methods = ["GET"])
+@app.route("/", methods = ["GET"])
 def home():
-    return render_template("home.html")
+    return render_template("index.html")
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
@@ -86,7 +86,25 @@ def signup():
     
 @app.route('/login', methods = ["POST", "GET"])
 def login():
-    return render_template("login.html")
+    if request.method == "POST":
+        username = request.form.get('username')
+        password = request.form.get('password')
+        if username and password:
+            db = utilities.Database()
+            is_user_valid = db.login(username, password)
+            
+            if is_user_valid:
+                pass
+                print("pieslēgšanās veiksmīga")
+                print(is_user_valid)
+                return redirect(url_for('index'))
+                
+            return render_template("login.html", is_user_valid = is_user_valid)
+
+
+
+    else:
+        return render_template("login.html")
 
 
 if __name__ == '__main__':

@@ -46,3 +46,18 @@ class Database():
         self.cur.execute("""INSERT INTO 'user'('username', 'email', 'password') VALUES (?, ?, ?) """, (username, email, hashed_password))
         self.connection.commit()
         self.connection.close()
+
+    def login(self, username, password):
+        self.cur.execute("""SELECT * FROM 'user' WHERE username=(?)""", (username,))
+        user = self.cur.fetchone()
+        print(user)
+        if user:
+            hashed_password = hashlib.md5(password.encode()).hexdigest()
+            
+            if hashed_password == user[3]:
+                return True
+            else:
+                return False
+            
+        else:
+            return False

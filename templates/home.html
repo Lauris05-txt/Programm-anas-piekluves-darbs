@@ -1,44 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title> Valūtas konvertētājs</title>
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css' ) }}">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    </head>
-    <body> 
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Valūtas konvertētājs</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css' ) }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  </head>
+  <body> 
+
+
     <div> 
       <!-- body div -->
-        <ul class="navbar">
-            <li><a href="/login">Log in</a></li>
-            <li><a href="/signup">Sign up</a></li>
-            <li style="float:left"><a href="/home">Valūtas konvertētājs</a></li>
-        </ul>
-        <div style="padding-top: 60px;">
-        <div class="big-box"> 
-            <div class="box-img">
-                <h2 class="heading"> Reāllaika valūtas konvertētājs. </h2>
-            </div>
-            <div class="content"> 
-                <div class="paragr-left">
-                    <p class="paragraph"> Reāllaika valūtas vērtības, savas preferences, sava konvertācijas vēsture. Pievienojies jau tagad! </p>
-                    <a href="/signup" type="button" class="button"> Reģistrēties </a>
-                </div>
-                <div> 
-                    <hr class="line-2">
-                </div>
-                <div class="paragr-right">
-                    <p class="paragraph"> Esi atpakaļ? Tad ienāc un sākam darbu! </p>
-                    <a href="/login" type="button" class="button"> Pieslēgties </a>
-                </div>
-            </div>
+
+    <ul class="navbar">
+      <li><a href="/login">Log in</a></li>
+      <li><a href="/signup">Sign up</a></li>
+      <li style="float:left"><a href="/">Valūtas konvertētājs</a></li>
+    </ul>
+
+    <div class="content">
+      <!-- content div -->
+      <div class="left-mother-box"> 
+      <div class="left-big-box">
+      <div class="left-big-box-title">
+        Valūtas ievade
+      </div>
+        <form method="post"> 
+          <div class="box-content">
+            <label class="dropdown-1" for="Currencies" style="color: white;"></label>
+            <select class="dropdown-des" name="input_currency" id="input_currency">
+              <option selected value="GBP">GBP</option>
+              <option type="submit" value="USD">USD</option>
+              <option type="submit" value="EUR">EUR</option>
+              <option type="submit" value="BGN">BGN</option>
+              <option type="submit" value="CZK">CZK</option>
+              <option type="submit" value="DKK">DKK</option>
+              <option type="submit" value="HUF">HUF</option>
+              <option type="submit" value="PLN">PLN</option>
+              <option type="submit" value="RON">RON</option>
+              <option type="submit" value="SEK">SEK</option>
+              <option type="submit" value="CHF">CHF</option>
+              <option type="submit" value="ISK">ISK</option>
+              <option type="submit" value="NOK">NOK</option>
+              <option type="submit" value="HRK">HRK</option>
+              <option type="submit" value="RUB">RUB</option>
+              <option type="submit" value="TRY">TRY</option>
+              <option type="submit" value="AUD">AUD</option>
+              <option type="submit" value="BRL">BRL</option>
+              <option type="submit" value="CAD">CAD</option>
+              <option type="submit" value="CNY">CNY</option>
+              <option type="submit" value="HKD">HKD</option>
+              <option type="submit" value="IDR">IDR</option>
+              <option type="submit" value="ILS">ILS</option>
+              <option type="submit" value="INR">INR</option>
+              <option type="submit" value="KRW">KRW</option>
+              <option type="submit" value="MXN">MXN</option>
+              <option type="submit" value="MYR">MYR</option>
+              <option type="submit" value="NZD">NZD</option>
+              <option type="submit" value="PHP">PHP</option>
+              <option type="submit" value="SGD">SGD</option>
+              <option type="submit" value="THB">THB</option>
+              <option type="submit" value="ZAR">ZAR</option>
+            </select>
+            <div style="padding-top: 20px;"> </div>
+          <div class="input-container">
+            
+            <input required type="text" name= 'input_sum' id="input_sum" placeholder="Ievadi vērtību..." style="font-family: 'Montserrat', serif;" oninvalid="this.setCustomValidity('Lūdzu ievadi vērtību!')">
+            <input class="submit-button" type="submit" value="&rarr;" >
+          </div>
+
+          <p style="color: white;"> {{converter_error}} </p>
+        
+          <br>
+          <div class="history-items" style="padding-top: 30px;"> 
+            <i class="material-icons clock-icon">&#xe192;</i>
+            <a class="link-to-history" href="/history">Apskatīt vēsturi</a>
+          </div>
+          </div>
+      </div>
+      </div>  
+      <div> 
+        <hr class="line">
+      </div>
+      <div class="right-mother-box"> 
+        <div class="right-big-box">
+        <div class="right-big-box-title">
+          Valūtas izvade
         </div>
+        <!-- <input type="text" name="output_currency" id="output_currency" placeholder="Ievadi beigu valūtu..." style="font-family: 'Montserrat', serif;"> -->
+        <div class="box-content">
+        <label class="dropdown-1" for="Currencies" style="color: white;"></label>
+          <select class="dropdown-des" name="output_currency" id="output_currency">
+            <option selected value="GBP" name="GBP">GBP</option>
+            <option value="USD" name="USD">USD</option>
+            <option value="EUR" name="EUR">EUR</option>
+            <option value="JPY" name="JPY">JPY</option>
+            <option value="CZK" name="CZK">CZK</option>
+            <option value="DKK" name="DKK">DKK</option>
+            <option value="HUF" name="HUF">HUF</option>
+            <option value="PLN" name="PLN">PLN</option>
+            <option value="RON" name="RON">RON</option>
+            <option value="SEK" name="SEK">SEK</option>
+            <option value="CHF" name="CHF">CHF</option>
+            <option value="ISK" name="ISK">ISK</option>
+            <option value="NOK" name="NOK">NOK</option>
+            <option value="HRK" name="HRK">HRK</option>
+            <option value="RUB" name="RUB">RUB</option>
+            <option value="TRY" name="TRY">TRY</option>
+            <option value="AUD" name="AUD">AUD</option>
+            <option value="BRL" name="BRL">BRL</option>
+            <option value="CAD" name="CAD">CAD</option>
+            <option value="CNY" name="CNY">CNY</option>
+            <option value="HKD" name="HKD">HKD</option>
+            <option value="IDR" name="IDR">IDR</option>
+            <option value="ILS" name="ILS">ILS</option>
+            <option value="INR" name="INR">INR</option>
+            <option value="KRW" name="KRW">KRW</option>
+            <option value="MXN" name="MXN">MXN</option>
+            <option value="MYR" name="MYR">MYR</option>
+            <option value="NZD" name="NZD">NZD</option>
+            <option value="PHP" name="PHP">PHP</option>
+            <option value="SGD" name="SGD">SGD</option>
+            <option value="THB" name="THB">THB</option>
+            <option value="ZAR" name="ZAR">ZAR</option>
+          </select>
+          <div style="padding-top: 20px;"> </div>
+          <div class="output-box">
+            <p id="output_sum"> {{ output_sum }}</p>
+            <button class="copy-button" style="background-color: #ffffff;" onclick="copy(event)"><i class="copy-button-icon material-icons">content_copy</i></button>
+          </div>
+          </div>
+        </form>
+       </div>
+      </div>
     </div>
-    </div>
-    </body>
+    <script>
+      function copy(event) {
+        event.preventDefault();
+
+        const textToCopy = document.getElementById('output_sum').innerText;
+      
+
+        navigator.clipboard.writeText(textToCopy).then(() => {
+          const button = event.target;
+          // button.innerText = 'Copied!';
+        });
+      }
+    </script>
+  </body>
 </html>

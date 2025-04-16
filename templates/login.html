@@ -17,9 +17,35 @@
     <ul class="navbar">
         <li><a href="/login">Log in</a></li>
         <li><a href="/signup">Sign up</a></li>
-        <li style="float:left"><a href="/home">Valūtas konvertētājs</a></li>
+        <li style="float:left"><a href="/">Valūtas konvertētājs</a></li>
     </ul>
 
+    <div class="mother-half-box">
+    <div class="main-half-box">
+      <div class="half-box-title">
+          Pieslēgties
+      </div>
+      <form action="/login" method="post"> 
+      <div class="input-container-2" style="margin-top: 80px;"> 
+        <input type="text" name= 'username' id="username" placeholder="Lietotājvārds" style="font-family: 'Montserrat', serif;" required>
+      </div>
+      <div class="input-container-2"  style="margin-top: 20px;"> 
+        <input type="password" name= 'password' id="password" placeholder="Parole" style="font-family: 'Montserrat', serif;" required>
+      </div>
+
+
+      <div> 
+      <input type="submit" class="register-button" value="Pieslēgties">
+      </div>
+      <div class="have-account">
+        <p>Vai Jums vēl nav konta? Izveido </p>
+        <a href="/signup">šeit </a>
+      </div>
+      <div>
+        <p class="validation"> {{is_user_valid}} </p>
+      </div>
+    </div>
+    </div>
   </body>
 
   </html>  
