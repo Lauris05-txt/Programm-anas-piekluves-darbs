@@ -49,11 +49,11 @@
           <p>Vai Jums jau ir konts? Pieslēdzies </p>
           <a href="/login">šeit </a>
         </div>
-        {% for err in reg_err %}
-          <p class="error-message"> {{err}} </p>
+        {% for line in err %}
+          <p class="error-message"> {{line}} </p>
         {% endfor %}
-        {% for i in no_err %}
-          <p class="no-err-message"> {{i}} </p>
+        {% for message in success_message %}
+          <p class="no-err-message"> {{message}} </p>
         {% endfor %}
     </div>
     </div>

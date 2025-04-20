@@ -28,15 +28,28 @@ class Database():
 """, (user_id, value_from, currency_from, value_to, currency_to, date, time))
         self.connection.commit()
         self.connection.close()
+
+    def get_user_data_by_id(self, user_id):
+        self.cur.execute("""SELECT * FROM 'user' WHERE user_id=(?)""", (user_id,))
+        user = self.cur.fetchone()
+        print("utr")
+        self.connection.close()
+        return user
+
+    def get_user_data_by_username(self, username):
+        self.cur.execute("""SELECT * FROM 'user' WHERE username=(?)""", (username,))
+        user = self.cur.fetchone()
+        self.connection.close()
+        return user
     
-    def get_histrory(self):
-        self.cur.execute("""SELECT * FROM 'conversion_history'""")
+    def get_histrory(self, user_id):
+        self.cur.execute("""SELECT * FROM 'conversion_history' WHERE user_id=(?)""", (user_id,))
         history = self.cur.fetchall()
         self.cur.close()
         return history[-11:]
     
-    def delete_history(self):
-        self.cur.execute("""DELETE FROM 'conversion_history'""")
+    def delete_history(self, user_id):
+        self.cur.execute("""DELETE FROM 'conversion_history' WHERE user_id=(?)""", (user_id,))
         self.connection.commit()
         self.cur.close()
         return (("", "", "", "", "", "", ""))
