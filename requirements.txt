@@ -1,2 +1,6 @@
 flask
 freecurrencyapi
+PYjwt
+functools
+re
+hashlib
