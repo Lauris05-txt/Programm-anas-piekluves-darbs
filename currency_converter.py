@@ -75,6 +75,13 @@ def delete_history(current_user):
     history = db.delete_history(current_user[0])
     return render_template("history.html", history = history)
 
+@app.route("/api/logout", methods = ["POST"])
+def logout():
+    response = make_response(redirect(url_for('index')))
+    response.delete_cookie("jwt_token")
+    return response 
+    
+
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
     err = []
@@ -125,7 +132,7 @@ def login():
                                SECRET_KEY, algorithm="HS256")
                 response = make_response(redirect(url_for('home')))
                 response.set_cookie('jwt_token', token)
-                return response 
+                return response
             else:
                 is_user_valid = "Lietotājvārds un/vai parole nav pareiza"
 

@@ -530,3 +530,21 @@ table {
 .validation {
     color: red;
 }
+
+.logout-button{
+    display: flex;
+    background-color:#029AE3;
+    height: 50px;
+    font-size: 16px;
+    font-family: "Montserrat", serif;
+    align-items: center;
+    font-weight: 500;
+    width: 48px;
+    transition: 0.3s;
+
+}
+
+.logout-button:hover {
+    color: white;
+    background-color:rgb(94, 0, 0)
+}
